@@ -1,0 +1,36 @@
+﻿@model Person
+@{
+    ViewData["Tilte"] = "Add";
+}
+
+<h1>Add PErson</h1>
+
+<a href="/person/DisplayAll" class="my-2 btn btn-primary"> Display All</a>
+
+<form asp-action="Add">
+    <div class="mb-3">
+        <label asp-for=Name class="form-label">Name</label>
+        <input asp-for="Name" type="text" class="form-control" />
+        <span class="alert-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for=Email class="form-label">Email</label>
+        <input asp-for="Email" type="text" class="form-control" />
+        <span class="alert-danger" asp-validation-for="Email"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for=Address class="form-label">Address</label>
+        <textarea asp-for="Address" class="form-control" ></textarea>
+        <span class="alert-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+
+    @if (TempData["msg"] != null)
+    {
+        
+         <div class="mb-3">@TempData["msg"] </div>
+    }
+    
+</form>

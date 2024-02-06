@@ -1,0 +1,46 @@
+﻿------------------------------------- Create Stored Procedure in Database ------------------------------------
+create database DapperMVCDemo
+
+use DapperMVCDemo
+
+create table dbo.Person(
+Id int primary key identity,
+Name nvarchar(100) not null,
+Email nvarchar(100) not null,
+[Address] nvarchar(200) not null
+)
+
+insert into Person (Name, Email, [Address])
+values ('John Doe 2','John_Doe2@gmail.com','Addres2,line 2')
+
+
+------------------------------------- Create CORE MVC Application ------------------------------------
+create a mvc core application
+add class library project
+
+next add connection string in appsettings.json
+
+
+------------------------------------- Download and install NugetPackages ------------------------------------
+next Nuget packages 
+install-package dapper
+install-package Microsoft.Extensions.Configuration.Abstraction
+install-package Microsoft.data.sqlclient
+
+------------------------------------- Create Stored Procedure ------------------------------------
+create data access its connections and  interface
+
+add a service dependency of connection in program.cs as AddTransient<ISqlDataAccess,SqlDataAccess>
+------------------------------------- Create PersonRepository ------------------------------------
+create person repository class and ite interface
+add a service dependency of connection in program.cs as AddTransient
+
+------------------------------------- Create Person Model ------------------------------------
+create a person model class in domain folder in models folder in data part
+
+------------------------------------- Add methords for data operations ------------------------------------
+add create, update, delete and select methods in Person Repository and its links in IpersonRepository
+
+
+
+
